@@ -2,31 +2,16 @@ import React, {FC, useEffect} from 'react';
 import { getRockets } from './services/spacex-rockets/service';
 import './App.css';
 import { RocketsRender } from './components/rockets-render/component';
+import { Header } from './components/header/component';
+import { Footer } from './components/footer/component';
 
 export const App: FC = () =>{
 
-  useEffect(() => {
-    getRockets();
-  },[])
-
   return (
-    <div className="App">
-      <h1>SPACEX</h1>
+    <div className="h-full">
+      <Header/>
       <RocketsRender/>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <Footer/>
     </div>
   );
 }
